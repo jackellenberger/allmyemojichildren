@@ -4,9 +4,20 @@ I made a lot of emoji. I won't stop. But I will keep track of them. Please, enjo
 
 ### Wait I want this
 
-Fork it! Generate a list of your emoji with `./generate.sh "your slack name" "your slack instance" "your slack token"`
+1. Fork it!
+1. Get your details together
+  * Find the name of your **Slack instance**. This is what it says in the upper left of your slack client, or in the url bar as $INSTANCE.slack.com
+  * Find your **slack name**. This is sort of deceptively difficult if you have aliases or display names set up. You'll figure it out. it's probably your name.
+  * Find your **slack token**. This is present on all logged-in slack pages, and can be found with the following method:
+    * Log in to $instance.slack.com
+    * Right click > inspect element anywhere
+    * open the console tab
+    * paste in `window.prompt("your api token is: ",/api_token: "(.*)"/.exec(document.body.innerHTML)[1])` and press return
+    * Copy the token it gives you
+    * get @ me if it doesn't give you a token
+1. Generate a list of your emoji with `./generate.sh "$SLACK_NAME" "$SLACK_INSTANCE" "$SLACK_TOKEN"`
 
-### How does this work?
+### What's going on here?
 
 Take a look at https://github.com/jackellenberger/emojme !
 
