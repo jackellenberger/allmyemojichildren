@@ -21,6 +21,10 @@ I made a lot of emoji. I won't stop. But I will keep track of them. Please, enjo
 
 Take a look at https://github.com/jackellenberger/emojme !
 
+### It's not working on my mac!
+
+OSX's default sed is bad. Install gnu-sed and try again.
+
 # And now:
 
 <!--start emoji-->

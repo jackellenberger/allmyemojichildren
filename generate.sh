@@ -12,7 +12,7 @@ if [ "$#" -eq 3 ]; then
   cd emojme \
     && nvm use 10 || nvm install 10 \
     && npm install \
-    && node emojme.js download --save --user "$1" --subdomain $2 --token $3
+    && node emojme.js download --user "$1" --subdomain $2 --token $3
 
   cp -r ./emojme/build/$2/"$1"/. ../emoji
   ls emoji > $date

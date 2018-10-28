@@ -5,10 +5,10 @@ const fs = require('fs');
 const exec = require('child_process').execSync;
 
 try {
-  let subdomain = process.argv[2];
-  let token = process.argv[3];
+  let subdomain = process.argv[3];
+  let token = process.argv[4];
   let options = {
-    save: process.argv[4],
+    save: process.argv[2],
     output: true
   };
 
