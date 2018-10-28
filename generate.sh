@@ -15,13 +15,13 @@ if [ "$#" -eq 3 ]; then
     && node emojme.js download --save --user "$1" --subdomain $2 --token $3
 
   cp -r ./emojme/build/$2/"$1"/. ../emoji
-  ls emoji > $date.emoji
+  ls emoji > $date
   sed -i '/<!--start emoji-->/Q' README.md >> README.md
   echo "<!--start emoji-->" >> README.md
 
   while read emoji; do
     echo "![$emoji](./emoji/$emoji)" >> README.md
-  done < $date.emoji
+  done < $date
 else
   echo 'Usage: generate.sh USER SUBDOMAIN TOKEN'
 fi
