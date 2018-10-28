@@ -1,0 +1,9 @@
+{
+  "main": "generate.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "emojme": "^1.3.0"
+  }
+}
