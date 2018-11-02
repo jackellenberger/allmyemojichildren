@@ -12,16 +12,12 @@ if [ "$#" -eq 3 ]; then
   cd emojme \
     && nvm use 10 || nvm install 10 \
     && npm install \
-    && node emojme.js download --user "$1" --subdomain $2 --token $3
+    && node emojme.js download --save "$1" --subdomain $2 --token $3
 
-  cp -r ./emojme/build/$2/"$1"/. ../emoji
+  cd ..
+  cp -r emojme/build/$2/"$1"/* ./emoji
   ls emoji > $date
-  sed -i '/<!--start emoji-->/Q' README.md >> README.md
-  echo "<!--start emoji-->" >> README.md
-
-  while read emoji; do
-    echo "![$emoji](./emoji/$emoji)" >> README.md
-  done < $date
+  sh update_readme.sh
 else
   echo 'Usage: generate.sh USER SUBDOMAIN TOKEN'
 fi
