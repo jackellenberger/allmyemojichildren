@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict'
 
 const emojme = require('emojme');
@@ -23,6 +24,8 @@ try {
     return savedEmoji[0].split('/').slice(0,-1).join('/');
   }).then(srcPath => {
     return exec(`mv ${srcPath.replace(/(\s+|\(|\))/g, "\\$1")}/* emoji/`);;
+  }).then(() => {
+    return exec(`sh update_readme.sh`);
   });
 } catch(err) {
   console.log(err);
