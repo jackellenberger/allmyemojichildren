@@ -5,6 +5,10 @@ I made a lot of emoji. I won't stop. But I will keep track of them. Please, enjo
 ### Wait I want this
 
 1. Fork it!
+1. Clear out my emoji.
+  * Delete everying in the readme _after_ `<!--start emoji -->`
+  * Delete any records files (i.e. files named 20XX-XX-XX)
+  * empty the emoji directory
 1. Get your details together
   * Find the name of your **Slack instance**. This is what it says in the upper left of your slack client, or in the url bar as $INSTANCE.slack.com
   * Find your **slack name**. This is sort of deceptively difficult if you have aliases or display names set up. You'll figure it out. it's probably your name.
