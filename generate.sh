@@ -2,7 +2,7 @@
 . ~/.nvm/nvm.sh
 date=`date +%Y-%m-%d`
 
-if [ "$#" -eq 3 ]; then
+if [ "$#" -eq 4 ]; then
   if [ ! -d "emojme" ]; then
     git clone git@github.com:jackellenberger/emojme.git
   else
@@ -12,12 +12,12 @@ if [ "$#" -eq 3 ]; then
   cd emojme \
     && nvm use 10 || nvm install 10 \
     && npm install \
-    && node emojme.js download --save "$1" --subdomain $2 --token $3
+    && node emojme.js download --save "$1" --subdomain $2 --token "$3" --cookie "$4"
 
   cd ..
   cp -r emojme/build/$2/"$1"/* ./emoji
   ls emoji > $date
   sh update_readme.sh
 else
-  echo 'Usage: generate.sh USER SUBDOMAIN TOKEN'
+  echo "Usage: generate.sh USER SUBDOMAIN TOKEN COOKIE"
 fi
